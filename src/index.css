@@ -1,61 +1,117 @@
-/* fonts */
+/* #region Typography */
 
 /* sour-gummy-100 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'SourGummy';
   font-style: normal;
   font-weight: 100;
-  src: url('/statics/fonts/sour-gummy-v1-latin-100.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/statics/fonts/sour-gummy-v1-latin-100.woff2') format('woff2');
 }
 /* sour-gummy-200 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'SourGummy';
   font-style: normal;
   font-weight: 200;
-  src: url('/statics/fonts/sour-gummy-v1-latin-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/statics/fonts/sour-gummy-v1-latin-200.woff2') format('woff2');
 }
 /* sour-gummy-300 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'SourGummy';
   font-style: normal;
   font-weight: 300;
-  src: url('/statics/fonts/sour-gummy-v1-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/statics/fonts/sour-gummy-v1-latin-300.woff2') format('woff2');
 }
 /* sour-gummy-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'SourGummy';
   font-style: normal;
   font-weight: 400;
-  src: url('/statics/fonts/sour-gummy-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/statics/fonts/sour-gummy-regular.woff2') format('woff2');
 }
 /* sour-gummy-500 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'SourGummy';
   font-style: normal;
   font-weight: 500;
-  src: url('/statics/fonts/sour-gummy-v1-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/statics/fonts/sour-gummy-v1-latin-500.woff2') format('woff2');
 }
 /* sour-gummy-600 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'SourGummy';
   font-style: normal;
   font-weight: 600;
-  src: url('/statics/fonts/sour-gummy-v1-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/statics/fonts/sour-gummy-v1-latin-600.woff2') format('woff2');
 }
 
-/* base styles */
+h1 {
+  font-family: "SourGummy", sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+h2 {
+  font-family: "SourGummy", sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.3;
+  color: var(--color-text);
+}
+
+h3 {
+  font-family: "SourGummy", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+p {
+  font-family: "SourGummy", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+/* #endregion */
+
+/* #region Colors */
+/* Dark Theme (default) */
+:root {
+  --color-text: #ffffff;
+  --color-bg: #000000;
+  --color-header-footer: rgb(25, 42, 25);
+  --color-main-bg: rgba(11, 40, 11, 0.678);
+  --color-cart-bg: #0a110a;
+  --color-border-highlight: rgb(172, 255, 47);
+}
+
+/* Light Theme */
+.light-theme {
+  --color-text: #111111;
+  --color-bg: #ffffff;
+  --color-header-footer: rgb(230, 245, 230);
+  --color-main-bg: rgba(200, 240, 200, 0.8);
+  --color-cart-bg: #f2f6f2;
+  --color-border-highlight: rgb(25, 150, 50);
+}
+/* #endregion */
+
+/* #region base styles */
 * {
   margin: 0;
   font-family: 'SourGummy';
   border: unset;
   text-decoration: none;
-  color: white;
+  color: var(--color-text);
   box-sizing: border-box;
 }
 
@@ -67,14 +123,32 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url('/statics/images/background-2.png') no-repeat center;
-
+  background: url('/statics/images/background-2.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 body {
-  background-color: black;
+  background-color: var(--color-bg);
 }
 
+.pd-16-24 {
+  padding: 16px 24px;
+}
+
+button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-border-highlight);
+  border-radius: 10px;
+}
+
+/* #endregion */
+
+/* #region Components */
 header,
 footer{
   width: 100%;
@@ -82,7 +156,7 @@ footer{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(25, 42, 25);
+  background-color: var(--color-header-footer);
 }
 
 .header-content {
@@ -100,7 +174,7 @@ footer{
 
 .logo-btn {
   background-color: transparent;
-  width: 250px;
+  width: 200px;
 }
 
 nav ul{
@@ -118,20 +192,18 @@ nav ul li {
 
 main {
   min-height: 100dvh;
+  height: auto;
   width: 60%;
+  background-color: var(--color-main-bg);
 }
 
 .content-wrapper {
   max-width: 1440px;
   width: 100%;
-  padding: 16px 32px;
 }
 
 .dish-section {
   width: 100%;
-  height: 100dvh;
-  background-color: rgba(11, 40, 11, 0.678);
-  padding: 8px 24px;
 }
 
 .main-container {
@@ -139,10 +211,42 @@ main {
 }
 
 .shopping-cart {
-  background-color: #0a110a;
+  background-color: var(--color-cart-bg);
   width: 40%;
-  height: calc(100dvh - 120px);
+  height: 100dvh;
   position: sticky;
-  top: 100px;
-  padding: 8px 16px;
+  top: 0;
 }
+
+.restaurant-header {
+  height: 300px;
+  background-image: url('/statics/images/greenfire-header-img.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.restaurant-logo {
+  width: 20%;
+  margin-bottom: -10%;
+  border-radius: 10px;
+  border: 3px solid var(--color-border-highlight);
+}
+
+
+.dish-card {
+  width: 100%;
+}
+
+.dish-card img{
+  width: 100%;
+}
+
+.add-to-cart-wrapper {
+  display: flex;
+  justify-content: space-between;;
+}
+
+/* #endregion */

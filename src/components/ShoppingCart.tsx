@@ -1,6 +1,6 @@
 const ShoppingCart = () => {
     return (
-        <aside className="shopping-cart">
+        <aside className="shopping-cart pd-16-24">
             <h2>Warenkorb</h2>
             <p>Ihr Warenkorb ist leer.</p>
             <div>
