@@ -1,11 +1,10 @@
-import gsap from 'gsap';
-import { ScrollTrigger, SplitText } from 'gsap/all';
+
 import Header from './components/Header';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import ShoppingCart from './components/ShoppingCart';
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+
 
 function App() {
 
