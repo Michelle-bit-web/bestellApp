@@ -1,10 +1,10 @@
 const Home = () => {
     return ( 
-        <section>
-            <main className="content-wrapper">
+        <main>
+            <section className="dish-section">
                 <h1>Welcome to BestellApp</h1>
-            </main>
-        </section>
+            </section>
+        </main>
      );
 }
 
