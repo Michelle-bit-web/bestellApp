@@ -1,68 +1,117 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+/* fonts */
+
+/* sour-gummy-100 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'SourGummy';
+  font-style: normal;
+  font-weight: 100;
+  src: url('/statics/fonts/sour-gummy-v1-latin-100.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* sour-gummy-200 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'SourGummy';
+  font-style: normal;
+  font-weight: 200;
+  src: url('/statics/fonts/sour-gummy-v1-latin-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* sour-gummy-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'SourGummy';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/statics/fonts/sour-gummy-v1-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* sour-gummy-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'SourGummy';
+  font-style: normal;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  src: url('/statics/fonts/sour-gummy-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
-a {
+/* sour-gummy-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'SourGummy';
+  font-style: normal;
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  src: url('/statics/fonts/sour-gummy-v1-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-a:hover {
-  color: #535bf2;
+/* sour-gummy-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'SourGummy';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/statics/fonts/sour-gummy-v1-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* base styles */
+* {
+  margin: 0;
+  font-family: 'SourGummy';
+  border: unset;
+  text-decoration: none;
+  color: white;
 }
 
 body {
-  margin: 0;
+  background-color: black;
+}
+
+header,
+footer{
+  width: 100%;
+  height: 100px;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+  background-color: rgb(25, 42, 25);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.logo{
+  height: 90%;
+  width: 15%;
+  min-width: 200px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.logo-btn {
+  background-color: transparent;
+  width: fit-content;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+nav ul{
+  display: flex;
+  align-items: center;
+  flex: 1;
+  width: auto;
+  min-width: 200px;
+  gap: 16px;
+}
+
+nav ul li {
+  list-style-type: none;
+}
+
+section {
+  min-height: 100dvh;
+  width: 100%;
+  background: url('../public/statics/images/background-2.png') no-repeat center;
+}
+
+.content-wrapper {
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+    background-color: rgba(11, 40, 11, 0.678);
+    width: calc(100% - 355px);
+    height: calc(100dvh - 200px);
+    max-width: calc(1920px - 355px);
+    padding: 8px 24px;
 }
