@@ -9,9 +9,15 @@ const Home = () => {
 
         gsap.from(titleSplit.chars, {
             yPercent: 100,
-            duration: 1.8,
+            duration: 2,
             ease: 'expo.out',
             stagger: 0.06
+        })
+
+        gsap.from('.restaurant-header', {
+            opacity: 0,
+            duration: 2,
+            ease: 'power1.inOut'
         })
     });
 
@@ -22,6 +28,16 @@ const Home = () => {
                     <img className="restaurant-logo" src="/statics/images/restaurant-logo.png" alt="Green Fire Logo" />
                 </header>
                 <h1>Green Fire</h1>
+                <div>
+                    <img src="" alt="" />
+                    <p>4,6 (23)</p>
+                    <p>Wir stehen für frische, lebendige Küche, gesunde Mahlzeiten, Grillen über dem Holzfeuer und saisonale Gerichte.</p>
+                </div>
+                <div>
+                    <button className="btn light-btn">Lieferung</button>
+                    <button className="btn inactive-btn">Abholung</button>
+                </div>
+                <p>* zzgl. 5€ Lieferkosten</p>
             </section>
             <DishList />
         </main>

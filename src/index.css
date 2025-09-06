@@ -87,16 +87,23 @@ p {
 /* Dark Theme (default) */
 :root {
   --color-text: #ffffff;
+  --color-text-dark:#000000;
+  --color-text-highlight: rgb(172, 255, 47);
   --color-bg: #000000;
   --color-header-footer: rgb(25, 42, 25);
   --color-main-bg: rgba(11, 40, 11, 0.678);
   --color-cart-bg: #0a110a;
   --color-border-highlight: rgb(172, 255, 47);
+  --dark-btn-bg: #18250f;
+  --light-btn-bg: rgb(172, 255, 47);
+  --inactive-btn-bg: #9a9898;
 }
 
 /* Light Theme */
 .light-theme {
   --color-text: #111111;
+  --color-text-dark:#ffffff;
+  --color-text-highlight: rgb(25, 150, 50);
   --color-bg: #ffffff;
   --color-header-footer: rgb(230, 245, 230);
   --color-main-bg: rgba(200, 240, 200, 0.8);
@@ -137,13 +144,43 @@ body {
   padding: 16px 24px;
 }
 
-button {
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  height: 30px;
+  width: 80px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-border-highlight);
+}
+
+.dark-btn {
+  background-color: var(--dark-btn-bg);
   border-radius: 10px;
+  border: 2px solid var(--color-border-highlight);
+  color: var(--color-text-highlight);
+}
+
+.light-btn {
+  background-color: var(--light-btn-bg);
+  border-radius: 10px;
+  color: var(--color-text-dark);
+}
+
+.inactive-btn {
+  background-color: var(--inactive-btn-bg);
+  border-radius: 10px;
+  color: var(--color-text-dark);
+}
+
+.trash-btn {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
 }
 
 /* #endregion */
