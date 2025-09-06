@@ -7,7 +7,7 @@ BestellApp is a food ordering application that allows users to browse menus, pla
 
 ## Demo
 
-Live demo: [Coming soon](https://michelle-bit-web.github.io/bestell-app)
+Live demo: [BestellApp landingpage](https://michelle-bit-web.github.io/bestell-app)
 
 ## 🪄 Features
 
