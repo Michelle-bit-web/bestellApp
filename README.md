@@ -1,69 +1,54 @@
-# React + TypeScript + Vite
+![Logo](./public/statics/images/bestellapp-logo-green.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🥙 BestellApp - Order, Pick-Up & Delivery
 
-Currently, two official plugins are available:
+This project is a rebuild of my existing BestellApp landingpage. I am currently working on a full-stack application with React Vite for the frontend, GSAP-powered animations, and Django for the backend API. <br>
+BestellApp is a food ordering application that allows users to browse menus, place orders and choose between delivery or pick-up options.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo
 
-## Expanding the ESLint configuration
+Live demo: [Coming soon](https://michelle-bit-web.github.io/bestell-app)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🪄 Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+📋 Browse Menus – View detailed menus with descriptions, prices, and images.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+🛒 Easy Ordering – Add food and drinks to your cart with a single tap.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🚗 Delivery or Pick-Up – Choose between home delivery or pick-up at the restaurant.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+📨 Order – Order your food and you will get an automatic reply. A payment method will be included.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+🗑️ Delete - Delete single menus from the cart or the whole cart.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🔎 Navbar - Use the menu navigation bar to directly switch to a another dishes section.
+
+👤 Login - Create an user account and login to see your order historiy.
+
+🧠 Storage - The backend will ensure that the user´s recent actions are retained, even after refreshing or reopening the app. 
+
+## 📸 Screenshots
+
+Mobile preview:
+![App Board](./public/statics/images/preview-mobile.png)
+
+Desktop preview:
+![App Board](./public/statics/images/preview-desktop.png)
+
+## ⚙️ Technologies Used
+
+- HTML
+- CSS
+- TypeScript
+- React and Vite
+- GSAP
+- Django (Python)
+
+## 🫳 How to Use
+
+- clone this repository and open it to your browser
+- no installations required
+
+## 🤝 Contributing
+
+Ideas and feedback are welcome! Feel free to open issues or submit pull requests.
