@@ -1,17 +1,49 @@
-const Dishes = () => {
-    return ( 
-        <div className="dish-card pd-16-24">
-            <h2>Hauptgerichte</h2>
-            <img src="statics/images/imgMain0.png" alt="Main dish" />
-            <div className="add-to-cart-wrapper">
-                <h3>Pizza Sandwich</h3>
-                <button className="btn dark-btn">+</button>
-            </div>
-            <p>Hausgemachter Pizzateig im Steinofen...</p>
-            <p>7,50 €</p>
-            
-        </div>
-     );
-}
- 
+import DishItem from "./DishItem";
+import type { Dish } from "../interfaces";
+
+type DishProps = {
+  dishes: Dish[];
+};
+
+const Dishes = ({dishes}: DishProps) => {
+    const mains = dishes.filter(dish => dish.type === "main");
+    const sides = dishes.filter(dish => dish.type === "side");
+    const drinks = dishes.filter(dish => dish.type === "drink");
+
+    return (
+    <div className="dish-card pd-16-24">
+      {/* Hauptgerichte */}
+      {mains.length > 0 && (
+        <>
+          <h2>Hauptgerichte</h2>
+          {mains.map((dish) => (
+            <DishItem key={dish.name} dish={dish} />
+          ))}
+        </>
+      )}
+
+      {/* Beilagen */}
+      {sides.length > 0 && (
+        <>
+          <h2>Beilagen</h2>
+          {sides.map((dish) => (
+            <DishItem key={dish.name} dish={dish} />
+          ))}
+        </>
+      )}
+
+      {/* Getränke */}
+      {drinks.length > 0 && (
+        <>
+          <h2>Getränke</h2>
+          {drinks.map((dish) => (
+            <DishItem key={dish.name} dish={dish} />
+          ))}
+        </>
+      )}
+    </div>
+  );
+};
+
+
 export default Dishes;
