@@ -1,36 +1,66 @@
 import CartDishes from "./CartDishes";
+import { useEffect, useState } from "react";
+
+type CartItem = {
+  id: number;
+  name: string;
+  image: string;
+  type: string;
+  price: number;
+  content: string;
+  delivery: boolean;
+  amount: number;
+};
 
 const ShoppingCart = () => {
+    const [cart, setCart] = useState<CartItem[]>([]);
+    function loadCart() {
+        fetch("http://localhost:8000/cart")
+            .then((res) => res.json())
+            .then((data) => setCart(data));
+    }
+
+  useEffect(() => { loadCart() }, []);
+
+  const subtotal = cart.reduce((sum, item) => sum + item.price * item.amount, 0);
+
     return (
         <aside className="shopping-cart pd-16-24">
             <h2>Warenkorb</h2>
-            <p>Ihr Warenkorb ist leer.</p>
-            <div>
-                <button className="btn light-btn trash-btn">
-                    <img src="statics/images/trash3.svg" alt="Trash Icon to delete whole shopping cart list" />
-                </button>
-            </div>
-            <div>
-                <ul>
-                    <CartDishes />
-                    <CartDishes />
-                </ul>
-                <span className="d-flex">
-                    <p>Zwischensumme</p>
-                    <p>22,40 €</p>
-                </span>
-                <span className="d-flex">
-                    <p>zzgl. Lieferkosten</p>
-                    <p>5 €</p>
-                </span>
-                <span className="d-flex">
-                    <p>Gesamt</p>
-                    <p>27,40 €</p>
-                </span>
+            {cart.length === 0 ? (
+        <p>Ihr Warenkorb ist leer.</p>
+      ) : (
+            <>
                 <div>
-                    <button className="btn dark-btn">Bestellen</button>
+                    <button className="btn light-btn trash-btn">
+                        <img src="statics/images/trash3.svg" alt="Trash Icon to delete whole shopping cart list" />
+                    </button>
                 </div>
-            </div>
+                <div className="flex-colum gap-16">
+                    <ul className="cart-list">
+                    {cart.map(item => (
+                        <CartDishes key={item.id} dish={item} refreshCart={loadCart}/>
+                        ))}
+                    </ul>
+                    <span className="d-flex">
+                        <p>Zwischensumme</p>
+                        <p>{subtotal.toFixed(2)} €</p>
+                    </span>
+                    <span className="d-flex">
+                        <p>zzgl. Lieferkosten</p>
+                        <p>5 €</p>
+                    </span>
+                    <span className="d-flex">
+                        <p>Gesamt</p>
+                        <p>{(subtotal + 5).toFixed(2)} €</p>
+                    </span>
+                    <div>
+                        <button className="btn dark-btn">Bestellen</button>
+                    </div>
+                </div>
+            </>
+      )}
+            
         </aside>
     );
 }

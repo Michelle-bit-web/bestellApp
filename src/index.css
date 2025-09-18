@@ -157,8 +157,16 @@ body {
   margin-bottom: 16px;
 }
 
+.mt-16 {
+  margin-top: 16px;
+}
+
 .mtb-32-16 {
   margin: 32px 0 16px 0;
+}
+
+.mtb-16-8 {
+  margin: 16px 0 8px 0;
 }
 
 .d-flex {
@@ -174,6 +182,10 @@ body {
 .flex-colum {
   display: flex;
   flex-direction: column;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--color-border-highlight)
 }
 
 .btn {
@@ -208,6 +220,11 @@ body {
   height: 30px;
   width: 30px;
   border-radius: 50%;
+}
+
+.cart-dish-btn {
+  height: 30px;
+  width: 30px;
 }
 
 /* #endregion */
@@ -320,6 +337,11 @@ main {
 .add-to-cart-wrapper {
   display: flex;
   justify-content: space-between;;
+}
+
+.cart-list {
+  margin-bottom: 24px;
+  padding: 16px 0 8px 0;
 }
 
 /* #endregion */
