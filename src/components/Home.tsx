@@ -27,10 +27,12 @@ const Home = () => {
                 <header className="restaurant-header">
                     <img className="restaurant-logo" src="/statics/images/restaurant-logo.png" alt="Green Fire Logo" />
                 </header>
-                <h1>Green Fire</h1>
+                <h1 className="mtb-32-16">Green Fire</h1>
                 <div>
-                    <img src="" alt="" />
-                    <p>4,6 (23)</p>
+                    <div className="rating-container">
+                        <img className="rating-star" src="statics/images/star.png" alt="Rating Star Icon" />
+                        <p>4,6 (23)</p>
+                    </div>
                     <p>Wir stehen für frische, lebendige Küche, gesunde Mahlzeiten, Grillen über dem Holzfeuer und saisonale Gerichte.</p>
                 </div>
                 <div>

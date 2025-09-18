@@ -1,7 +1,7 @@
 const CartDishes = () => {
     return ( 
         <div>
-            <div>
+            <div className="flex-end">
                 <button className="btn light-btn trash-btn">
                     <img src="statics/images/trash3.svg" alt="Trash Icon to delete whole shopping cart list" />
                 </button>

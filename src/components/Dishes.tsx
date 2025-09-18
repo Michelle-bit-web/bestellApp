@@ -15,7 +15,7 @@ const Dishes = ({dishes}: DishProps) => {
       {/* Hauptgerichte */}
       {mains.length > 0 && (
         <>
-          <h2>Hauptgerichte</h2>
+          <h2 className="mb-16">Hauptgerichte</h2>
           {mains.map((dish) => (
             <DishItem key={dish.name} dish={dish} />
           ))}
@@ -25,7 +25,7 @@ const Dishes = ({dishes}: DishProps) => {
       {/* Beilagen */}
       {sides.length > 0 && (
         <>
-          <h2>Beilagen</h2>
+          <h2 className="mb-16">Beilagen</h2>
           {sides.map((dish) => (
             <DishItem key={dish.name} dish={dish} />
           ))}
@@ -35,7 +35,7 @@ const Dishes = ({dishes}: DishProps) => {
       {/* Getränke */}
       {drinks.length > 0 && (
         <>
-          <h2>Getränke</h2>
+          <h2 className="mb-16">Getränke</h2>
           {drinks.map((dish) => (
             <DishItem key={dish.name} dish={dish} />
           ))}
