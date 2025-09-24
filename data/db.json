@@ -101,5 +101,16 @@
       "id": "4f0c"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "4f0c",
+      "name": "Cola",
+      "image": "imgDrink2",
+      "type": "drink",
+      "price": 1.2,
+      "content": "Cola von Soda Libre.",
+      "delivery": true,
+      "amount": 2
+    }
+  ]
 }

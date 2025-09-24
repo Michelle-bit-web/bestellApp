@@ -373,4 +373,47 @@ main {
   padding: 16px 0 8px 0;
 }
 
+.mobile-order-btn-container {
+  display: none;
+}
+
+/* #endregion */
+
+/* #region media queries*/
+@media(max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    position: relative;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .shopping-cart {
+    margin: 0 auto;
+    width: 90%;
+    height: 80dvh;
+    position: sticky;
+    bottom: 0;
+  }
+
+  .mobile-order-btn-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-order-btn {
+    height: 50px;
+    width: 120px;
+    font-size: 20px;
+  }
+
+  .order-btn {
+    display: none;
+  }
+}
 /* #endregion */

@@ -55,7 +55,10 @@ const ShoppingCart = () => {
                         <p>{(subtotal + 5).toFixed(2).replace('.', ',')} €</p>
                     </span>
                     <div>
-                        <button className="btn dark-btn">Bestellen</button>
+                        <button className="btn dark-btn order-btn">Bestellen</button>
+                    </div>
+                    <div className="mobile-order-btn-container">
+                        <button className="btn dark-btn mobile-order-btn">Bestellen</button>
                     </div>
                 </div>
             </>
