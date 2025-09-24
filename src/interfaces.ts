@@ -5,5 +5,6 @@ export interface Dish {
     content: string;
     price: number;
     delivery: boolean;
-    amount: number
+    amount: number;
+    id: number
 }

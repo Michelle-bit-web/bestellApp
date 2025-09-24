@@ -1,5 +1,3 @@
-
-
 type CartDishesProps = {
   dish: {
     id: number;
@@ -12,11 +10,12 @@ type CartDishesProps = {
 
 const CartDishes = ({ dish, refreshCart }: CartDishesProps) => {
 
-    async function updateAmount(newAmount: number) {
+    async function updateAmount(add: number) {
+        const newAmount = dish.amount + add;
         if (newAmount <= 0) {
-        await fetch(`http://localhost:8000/cart/${dish.name}`, { method: "DELETE" });
+        await fetch(`http://localhost:8000/cart/${dish.id}`, { method: "DELETE" });
         } else {
-        await fetch(`http://localhost:8000/cart/${dish.name}`, {
+        await fetch(`http://localhost:8000/cart/${dish.id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ amount: newAmount }),
@@ -25,10 +24,15 @@ const CartDishes = ({ dish, refreshCart }: CartDishesProps) => {
         refreshCart();
     }
 
+    async function deleteDish() {
+        await fetch(`http://localhost:8000/cart/${dish.id}`, { method: "DELETE" });
+        }
+        refreshCart();
+
     return ( 
         <div className="flex-colum gap-8 border-bottom mb-16">
             <div className="flex-end">
-                <button className="btn light-btn trash-btn" onClick={() => updateAmount(0)}>
+                <button className="btn light-btn trash-btn" onClick={() => deleteDish()}>
                     <img src="statics/images/trash3.svg" alt="Trash Icon to delete whole shopping cart list" />
                 </button>
             </div>
@@ -39,7 +43,7 @@ const CartDishes = ({ dish, refreshCart }: CartDishesProps) => {
             <div className="d-flex">
                 <div className="d-flex gap-16">
                     <button className="btn dark-btn cart-dish-btn" onClick={() => updateAmount(1)}>+</button>
-                    <button className="btn dark-btn cart-dish-btn" onClick={() => updateAmount(1)}>-</button>
+                    <button className="btn dark-btn cart-dish-btn" onClick={() => updateAmount(-1)}>-</button>
                 </div>
                 <p>{(dish.price * dish.amount).toFixed(2).replace('.', ',')} €</p>
             </div>

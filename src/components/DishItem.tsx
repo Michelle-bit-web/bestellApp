@@ -7,23 +7,23 @@ type DishProps = {
 const DishItem = ({ dish }: DishProps) => {
     async function addToCart() {
         try {
-            const res = await fetch(`http://localhost:8000/cart?name=${dish.name}`);
+            const res = await fetch(`http://localhost:8000/cart?id=${dish.id}`);
             const exists = await res.json();
 
             if(exists.length > 0) {
                 const item = exists[0];
-                await fetch(`http://localhost:8000/cart/${item.name}`, {
-            method: "PATCH",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ amount: item.amount + 1 }),
-            });
-        } else {
-            await fetch("http://localhost:8000/cart", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ ...dish, amount: 1 }),
-            });
-        }
+                await fetch(`http://localhost:8000/cart/${item.id}`, {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ amount: item.amount + 1 }),
+                });
+            } else {
+                await fetch("http://localhost:8000/cart", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ ...dish, amount: 1 }),
+                });
+            };
         } catch (err) {
         console.error("Error on adding dish", err);
         }

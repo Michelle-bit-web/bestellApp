@@ -101,26 +101,5 @@
       "id": "4f0c"
     }
   ],
-  "cart": [
-    {
-      "id": "5b76",
-      "name": "Pizza Sandwich",
-      "image": "imgMain0",
-      "type": "main",
-      "price": 9.5,
-      "content": "Hausgemachter Pizzateig im Steinofen mit Tomaten, Mozzarella und Basilikum.",
-      "delivery": true,
-      "amount": 1
-    },
-    {
-      "id": "5d94",
-      "name": "Grilled Chicken",
-      "image": "imgMain1",
-      "type": "main",
-      "price": 12.9,
-      "content": "Zarte Hähnchenbrust vom Grill. Dazu Semmelklöße und frische Champignons und Dill-Sauce.",
-      "delivery": true,
-      "amount": 1
-    }
-  ]
+  "cart": []
 }
