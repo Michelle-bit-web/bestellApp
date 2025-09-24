@@ -2,6 +2,7 @@ import DishList from "./DishList";
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { SplitText } from 'gsap/all';
+import { useState } from "react";
 
 const Home = () => {
     useGSAP(() => {
@@ -21,6 +22,8 @@ const Home = () => {
         })
     });
 
+    const [isDelivery, setIsDelivery] = useState(true);
+
     return ( 
         <main>
             <section className="dish-section pd-16-24">
@@ -36,8 +39,20 @@ const Home = () => {
                     <p>Wir stehen für frische, lebendige Küche, gesunde Mahlzeiten, Grillen über dem Holzfeuer und saisonale Gerichte.</p>
                 </div>
                 <div className="delivery-option-buttons">
-                    <button className="btn light-btn inactive-btn-left">Lieferung</button>
-                    <button className="btn inactive-btn ">Abholung</button>
+                    <button
+                        className={`btn ${isDelivery ? "light-btn" : "inactive-btn-left"}`}
+                        style={{ zIndex: isDelivery ? 2 : 1 }}
+                        onClick={() => setIsDelivery(true)}
+                    >
+                        Lieferung
+                    </button>
+                    <button
+                        className={`btn ${!isDelivery ? "light-btn" : "inactive-btn-right"}`}
+                        style={{ zIndex: !isDelivery ? 2 : 1 }}
+                        onClick={() => setIsDelivery(false)}
+                    >
+                        Abholung
+                    </button>
                 </div>
                 <p>* zzgl. 5€ Lieferkosten</p>
             </section>

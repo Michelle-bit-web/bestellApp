@@ -24,15 +24,22 @@ const CartDishes = ({ dish, refreshCart }: CartDishesProps) => {
         refreshCart();
     }
 
-    async function deleteDish() {
-        await fetch(`http://localhost:8000/cart/${dish.id}`, { method: "DELETE" });
-        }
+    async function clearCart() {
+        const res = await fetch("http://localhost:8000/cart");
+        const items = await res.json();
+
+        await Promise.all(
+            items.map((item: { id: number }) =>
+            fetch(`http://localhost:8000/cart/${item.id}`, { method: "DELETE" })
+            )
+        );
         refreshCart();
+        }
 
     return ( 
         <div className="flex-colum gap-8 border-bottom mb-16">
             <div className="flex-end">
-                <button className="btn light-btn trash-btn" onClick={() => deleteDish()}>
+                <button className="btn light-btn trash-btn" onClick={() => clearCart()}>
                     <img src="statics/images/trash3.svg" alt="Trash Icon to delete whole shopping cart list" />
                 </button>
             </div>

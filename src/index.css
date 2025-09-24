@@ -224,12 +224,6 @@ body {
   transition: scale 0.25s ease-in-out;
 }
 
-.inactive-btn {
-  background-color: var(--inactive-btn-bg);
-  border-radius: 10px;
-  color: var(--color-text-dark);
-}
-
 .trash-btn {
   height: 30px;
   width: 30px;
@@ -345,14 +339,24 @@ main {
   padding: 16px 0;
 }
 
+.delivery-option-buttons .light-btn:hover {
+  scale: 1;
+}
+
 .inactive-btn-left {
   margin-right: -8px;
   border-radius: 10px 0 0 10px;
+  background-color: var(--inactive-btn-bg);
+  color: var(--color-text-dark);
+  transition: color, background-color 0.25s ease-in;
 }
 
 .inactive-btn-right {
   margin-left: -8px;
   border-radius: 0 10px 10px 0;
+  background-color: var(--inactive-btn-bg);
+  color: var(--color-text-dark);
+  transition: color, background-color 0.25s ease-in;
 }
 
 .dish-card {

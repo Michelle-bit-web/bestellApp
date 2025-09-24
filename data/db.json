@@ -110,6 +110,16 @@
       "price": 1.2,
       "content": "Cola von Soda Libre.",
       "delivery": true,
+      "amount": 3
+    },
+    {
+      "id": "5d94",
+      "name": "Grilled Chicken",
+      "image": "imgMain1",
+      "type": "main",
+      "price": 12.9,
+      "content": "Zarte Hähnchenbrust vom Grill. Dazu Semmelklöße und frische Champignons und Dill-Sauce.",
+      "delivery": true,
       "amount": 2
     }
   ]
