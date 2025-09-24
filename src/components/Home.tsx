@@ -35,9 +35,9 @@ const Home = () => {
                     </div>
                     <p>Wir stehen für frische, lebendige Küche, gesunde Mahlzeiten, Grillen über dem Holzfeuer und saisonale Gerichte.</p>
                 </div>
-                <div>
-                    <button className="btn light-btn">Lieferung</button>
-                    <button className="btn inactive-btn">Abholung</button>
+                <div className="delivery-option-buttons">
+                    <button className="btn light-btn inactive-btn-left">Lieferung</button>
+                    <button className="btn inactive-btn ">Abholung</button>
                 </div>
                 <p>* zzgl. 5€ Lieferkosten</p>
             </section>

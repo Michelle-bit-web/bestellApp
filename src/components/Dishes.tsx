@@ -11,7 +11,7 @@ const Dishes = ({dishes}: DishProps) => {
     const drinks = dishes.filter(dish => dish.type === "drink");
 
     return (
-    <div className="dish-card pd-16-24">
+    <div id="main" className="dish-card pd-16-24">
       {/* Hauptgerichte */}
       {mains.length > 0 && (
         <>
@@ -25,7 +25,7 @@ const Dishes = ({dishes}: DishProps) => {
       {/* Beilagen */}
       {sides.length > 0 && (
         <>
-          <h2 className="mb-16">Beilagen</h2>
+          <h2 id="side" className="mb-16">Beilagen</h2>
           {sides.map((dish) => (
             <DishItem key={dish.name} dish={dish} />
           ))}
@@ -35,7 +35,7 @@ const Dishes = ({dishes}: DishProps) => {
       {/* Getränke */}
       {drinks.length > 0 && (
         <>
-          <h2 className="mb-16">Getränke</h2>
+          <h2 id="drinks" className="mb-16">Getränke</h2>
           {drinks.map((dish) => (
             <DishItem key={dish.name} dish={dish} />
           ))}

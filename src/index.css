@@ -326,6 +326,21 @@ main {
   width: 25px;
 }
 
+.delivery-option-buttons {
+  display: flex;
+  padding: 16px 0;
+}
+
+.inactive-btn-left {
+  margin-right: -8px;
+  border-radius: 10px 0 0 10px;
+}
+
+.inactive-btn-right {
+  margin-left: -8px;
+  border-radius: 0 10px 10px 0;
+}
+
 .dish-card {
   width: 100%;
 }
