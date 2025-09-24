@@ -37,7 +37,7 @@ const DishItem = ({ dish }: DishProps) => {
             <button className="btn dark-btn" onClick={addToCart}>+</button>
             </div>
             <p>{dish.content}</p>
-            <p>{dish.price} €</p>
+            <p>{(dish.price).toFixed(2).replace('.', ',')} €</p>
         </div>
     );
 }

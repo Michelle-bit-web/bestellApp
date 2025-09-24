@@ -44,15 +44,15 @@ const ShoppingCart = () => {
                     </ul>
                     <span className="d-flex">
                         <p>Zwischensumme</p>
-                        <p>{subtotal.toFixed(2)} €</p>
+                        <p>{subtotal.toFixed(2).replace('.', ',')} €</p>
                     </span>
                     <span className="d-flex">
                         <p>zzgl. Lieferkosten</p>
-                        <p>5 €</p>
+                        <p>5,00 €</p>
                     </span>
                     <span className="d-flex">
                         <p>Gesamt</p>
-                        <p>{(subtotal + 5).toFixed(2)} €</p>
+                        <p>{(subtotal + 5).toFixed(2).replace('.', ',')} €</p>
                     </span>
                     <div>
                         <button className="btn dark-btn">Bestellen</button>

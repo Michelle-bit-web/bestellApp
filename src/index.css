@@ -97,6 +97,8 @@ p {
   --color-border-highlight: rgb(172, 255, 47);
   --dark-btn-bg: #18250f;
   --light-btn-bg: rgb(172, 255, 47);
+  --dark-btn-hover: #2f481d;
+  --light-btn-hover: rgb(146, 217, 39);
   --inactive-btn-bg: #9a9898;
 }
 
@@ -204,10 +206,22 @@ body {
   color: var(--color-text-highlight);
 }
 
+.dark-btn:hover {
+  background-color: var(--dark-btn-hover);
+  scale: 0.9;
+  transition: scale 0.25s ease-in-out;
+}
+
 .light-btn {
   background-color: var(--light-btn-bg);
   border-radius: 10px;
   color: var(--color-text-dark);
+}
+
+.light-btn:hover {
+  background-color: var(--light-btn-hover);
+  scale: 0.9;
+  transition: scale 0.25s ease-in-out;
 }
 
 .inactive-btn {

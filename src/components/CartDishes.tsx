@@ -41,7 +41,7 @@ const CartDishes = ({ dish, refreshCart }: CartDishesProps) => {
                     <button className="btn dark-btn cart-dish-btn" onClick={() => updateAmount(1)}>+</button>
                     <button className="btn dark-btn cart-dish-btn" onClick={() => updateAmount(1)}>-</button>
                 </div>
-                <p>{(dish.price * dish.amount).toFixed(2)} €</p>
+                <p>{(dish.price * dish.amount).toFixed(2).replace('.', ',')} €</p>
             </div>
         </div>
      );
