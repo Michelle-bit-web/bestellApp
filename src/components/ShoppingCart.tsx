@@ -23,6 +23,7 @@ const ShoppingCart = () => {
   useEffect(() => { loadCart() }, []);
 
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.amount, 0);
+  const totalOrders = cart.reduce((orders, item) => orders + item.amount, 0);
 
     return (
         <aside className="shopping-cart pd-16-24">
@@ -58,7 +59,10 @@ const ShoppingCart = () => {
                         <button className="btn dark-btn order-btn">Bestellen</button>
                     </div>
                     <div className="mobile-order-btn-container">
-                        <button className="btn dark-btn mobile-order-btn">Bestellen</button>
+                        <button className="btn dark-btn mobile-order-btn">
+                            Bestellen
+                            <span className="order-number">{totalOrders}</span>
+                        </button>
                     </div>
                 </div>
             </>

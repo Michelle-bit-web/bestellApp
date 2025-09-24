@@ -123,6 +123,19 @@ p {
   text-decoration: none;
   color: var(--color-text);
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-highlight) var(--color-main-bg);
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-main-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-border-highlight);
+    border-radius: 10px;
+    border: 2px solid var(--color-main-bg);
+  }
 }
 
 html {
@@ -305,6 +318,7 @@ main {
   height: 100dvh;
   position: sticky;
   top: 0;
+  overflow-y: auto;
 }
 
 .restaurant-header {
@@ -379,6 +393,7 @@ main {
 
 .mobile-order-btn-container {
   display: none;
+  position: relative;
 }
 
 /* #endregion */
@@ -387,7 +402,6 @@ main {
 @media(max-width: 768px) {
   .main-container {
     flex-direction: column;
-    position: relative;
   }
 
   main {
@@ -414,10 +428,23 @@ main {
     height: 50px;
     width: 120px;
     font-size: 20px;
+    position: relative;
   }
 
   .order-btn {
     display: none;
+  }
+
+  .order-number {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    margin: -8px -8px;
+    border-radius: 50%;
+    background-color: var(--light-btn-bg);
+    color: var(--color-text-dark)
   }
 }
 /* #endregion */
